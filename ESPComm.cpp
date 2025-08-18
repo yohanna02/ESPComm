@@ -9,11 +9,23 @@ void ESPComm::begin(long baud) {
   if (_serial == &Serial) {
     Serial.begin(baud);
   }
-#if defined(ESP8266) || defined(ESP32)
+#if defined(ESP8266)
+  else if (_serial == &Serial1) {
+    Serial1.begin(baud);
+  }
+#elif defined(ESP32)
   else if (_serial == &Serial1) {
     Serial1.begin(baud);
   } else if (_serial == &Serial2) {
     Serial2.begin(baud);
+  }
+#elif defined(ARDUINO_AVR_MEGA2560) || defined(ARDUINO_AVR_MEGA)
+  else if (_serial == &Serial1) {
+    Serial1.begin(baud);
+  } else if (_serial == &Serial2) {
+    Serial2.begin(baud);
+  } else if (_serial == &Serial3) {
+    Serial3.begin(baud);
   }
 #endif
 }
