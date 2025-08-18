@@ -1,0 +1,16 @@
+#######################################
+# Syntax Coloring Map For ESPComm
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+ESPComm    KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+begin      KEYWORD2
+loop       KEYWORD2
+onCommand  KEYWORD2
+send       KEYWORD2
